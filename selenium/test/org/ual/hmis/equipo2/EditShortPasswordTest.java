@@ -24,20 +24,21 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class LogoutTest {
+public class EditShortPasswordTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() {
 	  int browser = 1;
-	  Boolean headless = false;
+	  Boolean headless = true;
 	  
 	  switch(browser) {
 	  case 0: //firefox
 		  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 		  FirefoxOptions firefoxOptions = new FirefoxOptions();
 		  if (headless) firefoxOptions.setHeadless(headless);
+		  driver = new FirefoxDriver(firefoxOptions);
 		  driver = new FirefoxDriver(firefoxOptions);
 		  break;
 	  case 1: //chrome
@@ -59,36 +60,34 @@ public class LogoutTest {
     driver.quit();
   }
   @Test
-  public void logout() {
-    // Test name: logout
+  public void editShortPassword() {
+    // Test name: editShortPassword
     // Step # | name | target | value
     // 1 | open | http://localhost:8080/login | 
     driver.get("http://localhost:8080/login");
-    // 2 | setWindowSize | 1221x648 | 
-    driver.manage().window().setSize(new Dimension(1221, 648));
-    // 3 | click | name=username | 
-    driver.findElement(By.name("username")).click();
-    // 4 | type | name=username | alexalex
+    // 2 | setWindowSize | 1552x840 | 
+    driver.manage().window().setSize(new Dimension(1552, 840));
+    // 3 | type | name=username | alexalex
     driver.findElement(By.name("username")).sendKeys("alexalex");
-    // 5 | type | name=password | hmishmis
+    // 4 | type | name=password | alexalex
     driver.findElement(By.name("password")).sendKeys("alexalex");
-    // 6 | sendKeys | name=password | ${KEY_ENTER}
+    // 5 | sendKeys | name=password | ${KEY_ENTER}
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-    try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    // 7 | click | css=h2 | 
-    driver.findElement(By.cssSelector("h2")).click();
-    // 8 | assertText | css=h2 | Welcome alexalex | Logout
-    assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Welcome alexalex | Logout"));
-    // 9 | click | linkText=Logout | 
-    driver.findElement(By.linkText("Logout")).click();
-    // 10 | click | css=.form-heading | 
-    
-    driver.findElement(By.cssSelector(".form-heading")).click();
-    // 11 | assertText | css=.form-heading | Log in
-    assertThat(driver.findElement(By.cssSelector(".form-heading")).getText(), is("Log in"));
+    // 6 | click | linkText=Edit your profile | 
+    driver.findElement(By.linkText("Edit your profile")).click();
+    // 7 | click | id=password | 
+    driver.findElement(By.id("password")).click();
+    // 8 | type | id=password | a
+    driver.findElement(By.id("password")).sendKeys("a");
+    // 9 | click | id=passwordConfirm | 
+    driver.findElement(By.id("passwordConfirm")).click();
+    // 10 | type | id=passwordConfirm | a
+    driver.findElement(By.id("passwordConfirm")).sendKeys("a");
+    // 11 | click | css=.btn | 
+    driver.findElement(By.cssSelector(".btn")).click();
+    // 12 | click | id=editprofileform | 
+    driver.findElement(By.id("editprofileform")).click();
+    // 13 | assertText | id=password.errors | Try one with at least 8 characters.
+    assertThat(driver.findElement(By.id("password.errors")).getText(), is("Try one with at least 8 characters."));
   }
 }
