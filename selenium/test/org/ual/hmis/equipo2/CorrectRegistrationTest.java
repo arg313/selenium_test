@@ -72,7 +72,7 @@ public class CorrectRegistrationTest {
     // 1 | executeScript | return "ual-" + Math.floor(Math.random()*1500000) | userrandom
     vars.put("userrandom", js.executeScript("return \"ual-\" + Math.floor(Math.random()*1500000)"));
     // 2 | open | http://localhost:8080/registration | 
-    driver.get("http://localhost:8080/registration");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/registration");
     // 3 | setWindowSize | 1221x648 | 
     driver.manage().window().setSize(new Dimension(1221, 648));
     // 4 | click | id=username | 

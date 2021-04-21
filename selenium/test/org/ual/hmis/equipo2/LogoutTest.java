@@ -31,7 +31,7 @@ public class LogoutTest {
   @Before
   public void setUp() {
 	  int browser = 1;
-	  Boolean headless = false;
+	  Boolean headless = true;
 	  
 	  switch(browser) {
 	  case 0: //firefox
@@ -63,7 +63,7 @@ public class LogoutTest {
     // Test name: logout
     // Step # | name | target | value
     // 1 | open | http://localhost:8080/login | 
-    driver.get("http://localhost:8080/login");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/login");
     // 2 | setWindowSize | 1221x648 | 
     driver.manage().window().setSize(new Dimension(1221, 648));
     // 3 | click | name=username | 

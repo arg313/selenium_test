@@ -64,7 +64,7 @@ public class EditShortPasswordTest {
     // Test name: editShortPassword
     // Step # | name | target | value
     // 1 | open | http://localhost:8080/login | 
-    driver.get("http://localhost:8080/login");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/login");
     // 2 | setWindowSize | 1552x840 | 
     driver.manage().window().setSize(new Dimension(1552, 840));
     // 3 | type | name=username | alexalex

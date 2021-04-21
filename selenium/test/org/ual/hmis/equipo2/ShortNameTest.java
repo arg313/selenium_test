@@ -63,7 +63,7 @@ public class ShortNameTest {
     // Test name: shortName
     // Step # | name | target | value
     // 1 | open | /registration | 
-    driver.get("http://localhost:8080/registration");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/registration");
     // 2 | setWindowSize | 1218x648 | 
     driver.manage().window().setSize(new Dimension(1218, 648));
     // 3 | click | id=username | 

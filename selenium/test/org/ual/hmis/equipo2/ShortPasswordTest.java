@@ -63,7 +63,7 @@ public class ShortPasswordTest {
     // Test name: shortPassword
     // Step # | name | target | value
     // 1 | open | /login | 
-    driver.get("http://localhost:8080/");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/");
     // 2 | setWindowSize | 1218x648 | 
     driver.manage().window().setSize(new Dimension(1218, 648));
     // 3 | click | linkText=Create an account | 

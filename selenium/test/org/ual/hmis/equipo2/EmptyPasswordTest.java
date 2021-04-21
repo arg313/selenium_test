@@ -63,7 +63,7 @@ public class EmptyPasswordTest {
     // Test name: emptyPassword
     // Step # | name | target | value
     // 1 | open | /login | 
-    driver.get("http://localhost:8080/");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/");
     // 2 | setWindowSize | 1222x651 | 
     driver.manage().window().setSize(new Dimension(1222, 651));
     // 3 | click | linkText=Create an account | 

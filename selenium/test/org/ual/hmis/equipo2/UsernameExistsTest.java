@@ -63,7 +63,7 @@ public class UsernameExistsTest {
     // Test name: usernameExists
     // Step # | name | target | value
     // 1 | open | /login | 
-    driver.get("http://localhost:8080/");
+    driver.get("http://seleniumweb.northeurope.cloudapp.azure.com/");
     // 2 | setWindowSize | 1220x648 | 
     driver.manage().window().setSize(new Dimension(1220, 648));
     // 3 | click | linkText=Create an account | 
