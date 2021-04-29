@@ -73,6 +73,11 @@ public class EditShortPasswordTest {
     driver.findElement(By.name("password")).sendKeys("alexalex");
     // 5 | sendKeys | name=password | ${KEY_ENTER}
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+    try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     // 6 | click | linkText=Edit your profile | 
     driver.findElement(By.linkText("Edit your profile")).click();
     // 7 | click | id=password | 
