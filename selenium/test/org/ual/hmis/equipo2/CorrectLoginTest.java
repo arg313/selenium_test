@@ -30,7 +30,7 @@ public class CorrectLoginTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	  int browser = 10;
+	  int browser = 0;
 	  Boolean headless = true;
 	  
 	  switch(browser) {
