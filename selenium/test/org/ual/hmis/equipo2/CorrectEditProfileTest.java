@@ -73,6 +73,11 @@ public class CorrectEditProfileTest {
     driver.findElement(By.name("password")).sendKeys("alexalex");
     // 5 | sendKeys | name=password | ${KEY_ENTER}
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+    try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     // 6 | click | linkText=Edit your profile | 
     driver.findElement(By.linkText("Edit your profile")).click();
     // 7 | click | id=password | 
@@ -83,6 +88,11 @@ public class CorrectEditProfileTest {
     driver.findElement(By.id("passwordConfirm")).sendKeys("alexalex");
     // 10 | sendKeys | id=passwordConfirm | ${KEY_ENTER}
     driver.findElement(By.id("passwordConfirm")).sendKeys(Keys.ENTER);
+    try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     // 11 | click | id=editprofileform | 
     driver.findElement(By.id("editprofileform")).click();
     // 12 | assertText | css=span | Profile updated!
