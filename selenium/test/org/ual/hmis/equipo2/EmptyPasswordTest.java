@@ -52,7 +52,7 @@ public class EmptyPasswordTest {
 				// Descargar geckodriver de https://github.com/mozilla/geckodriver/releases
 				// Descomprimir el archivo geckodriver.exe en la carpeta drivers
 
-				System.setProperty("webdriver.gecko.driver",  "drivers/geckodriver.exe");
+				//System.setProperty("webdriver.gecko.driver",  "drivers/geckodriver.exe");
 				System.getProperties().list(System.out);
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
 				if (headless) firefoxOptions.setHeadless(headless);
@@ -64,7 +64,7 @@ public class EmptyPasswordTest {
 				// Descargar Chromedriver de https://chromedriver.chromium.org/downloads
 				// Descomprimir el archivo chromedriver.exe en la carpeta drivers
 
-				System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+				//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 				ChromeOptions chromeOptions = new ChromeOptions();
 				if (headless) chromeOptions.setHeadless(headless);
 				chromeOptions.addArguments("window-size=1920,1080");
